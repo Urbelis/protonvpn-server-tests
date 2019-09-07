@@ -1,0 +1,85 @@
+{
+	"type": "array",
+	"items": {
+		"properties": {
+			"ID": {
+				"type": "string"
+			},
+			"EntryCountry": {
+				"type": "string"
+			},
+			"ExitCountry": {
+				"type": "string"
+			},
+			"Name": {
+				"type": "string"
+			},
+			"Domain": {
+				"type": "string"
+			},
+			"Load": {
+				"type": "number",
+				"minimum": 0
+			},
+			"Tier": {
+				"enum": [0,1,2]
+			},
+			"Features": {
+				"enum": [0,1,2,4]
+			},
+			"Region": {
+				"type": [
+					"string",
+					"null"
+				]
+			},
+			"City": {
+				"type": [
+					"string",
+					"null"
+				]
+			},
+			"Location": {
+				"Lat": {
+					"type": "number",
+					"minimum": -90,
+					"maximum": 90
+				},
+				"Long": {
+					"type": "number",
+					"minimum": -180,
+					"maximum": 180
+				},
+				"Status": {
+					"enum": [0,1]
+				},
+				"Load": {
+					"type": "number"
+				},
+				"Score": {
+					"type": "float"
+				},
+				"Servers": {
+					"type": "array",
+					"properties": {
+						"EntryIP": {
+							"type": "string"
+						},
+						"ExitIP": {
+							"type": "string"
+						},
+						"Domain": {
+							"type": "string"
+						},
+						"ID": {
+							"type": "string"
+						},
+						"Status": {
+							"enum": [0,1]
+						}
+					}
+				}
+			}
+		}
+	}
+}
