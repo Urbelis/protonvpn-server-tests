@@ -1,17 +1,23 @@
-import time 
+import time
 from config import base_url
-from services.logicals_impl import VPNServers
+from services.logicals_impl import LogicalServers
 
-VPN_servers = VPNServers(base_url=base_url)
+servers = LogicalServers(base_url=base_url)
+high_load_servers = []
+offline_servers = []
 timestr = time.strftime("%Y%m%d-%H%M%S")
 f = open("logs/"+timestr, "a")
 
-f.write("Servers with high load: \n")
-for server in VPN_servers.logical_servers:
-    if VPN_servers.verify_logical_server_load(server) == "HIGH":
-        f.write(str(server) +"\n")
+for server in servers.logical_servers:
+    if servers.verify_logical_server_load(server) == "HIGH":
+        high_load_servers.append(server)
+    if servers.check_if_logical_online(server) != True:
+        offline_servers.append(server)
 
-f.write("Logical Servers that are offline: \n")
-for server in VPN_servers.logical_servers:
-    if VPN_servers.check_if_logical_online(server) != True:
-        f.write(str(server)+ "\n")
+f.write("Servers with high load: \n")
+for server in high_load_servers:
+    f.write(str(server) + "\n")
+
+f.write("Servers which are offline: \n")
+for server in offline_servers:
+    f.write(str(server) + "\n")
