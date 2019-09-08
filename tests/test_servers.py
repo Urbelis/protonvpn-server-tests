@@ -2,8 +2,6 @@ from config import base_url
 from utils.helpers import Helpers
 from services.logicals_impl import VPNServers
 
-# Move BASEURL To Pytest CFG
-
 helpers = Helpers()
 VPN_servers = VPNServers(base_url=base_url)
 
