@@ -1,3 +1,4 @@
 __pycache__/
 tests/testrun.py
 .DS_Store
+logs/

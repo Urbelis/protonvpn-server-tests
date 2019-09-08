@@ -17,8 +17,8 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Run all tests
+    - name: Run all tests and scripts
       run: |
-        cd tests
-        python -m unittest test.py
+        pytest
+        python test_servers.py
         
