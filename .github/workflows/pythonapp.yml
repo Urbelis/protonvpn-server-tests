@@ -1,6 +1,8 @@
 name: Proton VPN Server tests
 
-on: [push]
+on: 
+  schedule:
+    - cron: '20 4 * * *'
 
 jobs:
   build:
