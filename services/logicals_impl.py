@@ -4,7 +4,7 @@ import re
 from endpoints.vpn import VpnEndpoints
 
 
-class VPNServers():
+class LogicalServers():
 
     def __init__(self, base_url=None):
         self.base_url = base_url
@@ -39,7 +39,7 @@ class VPNServers():
                 return server
             else:
                 continue
-        
+
     def check_if_logical_online(self, logical_server):
         if logical_server['Status'] == 1:
             return True
