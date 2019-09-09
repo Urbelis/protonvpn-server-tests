@@ -22,5 +22,5 @@ jobs:
     - name: Run all tests and scripts
       run: |
         pytest
-        python test_servers.py
+        python server_status.py
         
