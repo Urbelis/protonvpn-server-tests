@@ -51,6 +51,8 @@ The current project structure is:
 |       └───pythonapp.yml
 ├───endpoints
 │   └───vpn.py
+├───logs
+|   └───20190909-080528
 ├───schemas
 |   └───logical_servers.json
 ├───services
