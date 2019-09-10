@@ -1,8 +1,8 @@
-from config import base_url
+from config import BASE_URL
 from utils.helpers import Helpers
 from services.logicals_impl import LogicalServers
 
-servers = LogicalServers(base_url=base_url)
+servers = LogicalServers(base_url=BASE_URL)
 
 
 def test_vpn_applications_are_operational():

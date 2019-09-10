@@ -1,1 +1,1 @@
-base_url = 'https://api.protonmail.ch/'
+BASE_URL = 'https://api.protonmail.ch/'

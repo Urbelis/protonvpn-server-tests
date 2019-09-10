@@ -1,8 +1,8 @@
 import time
-from config import base_url
+from config import BASE_URL
 from services.logicals_impl import LogicalServers
 
-servers = LogicalServers(base_url=base_url)
+servers = LogicalServers(base_url=BASE_URL)
 timestr = time.strftime("%Y%m%d-%H%M%S")
 f = open("logs/"+timestr, "a")
 
