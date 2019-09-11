@@ -1,18 +1,15 @@
 import time
+import json
 from config import BASE_URL
 from services.logicals_impl import LogicalServers
 
 servers = LogicalServers(base_url=BASE_URL)
 timestr = time.strftime("%Y%m%d-%H%M%S")
-f = open("logs/"+timestr, "a")
+high_load_file= open("logs/highload."+timestr+".json", "a")
+offline_servers_file = open("logs/servers"+timestr+".json", "a")
 
 high_load_servers = [s for s in servers.logical_servers if servers.verify_logical_server_load(s) == "HIGH"]
 offline_servers = [s for s in servers.logical_servers if not servers.check_if_logical_online(s)]
 
-f.write("Servers with high load: \n")
-for server in high_load_servers:
-    f.write(str(server) + "\n")
-
-f.write("Servers which are offline: \n")
-for server in offline_servers:
-    f.write(str(server) + "\n")
+json.dump(high_load_servers, high_load_file)
+json.dump(offline_servers, offline_servers_file)
